@@ -41,20 +41,32 @@ const compareArrs = (past: Item[], now: Item[], sizes: string[]): CompareArrData
         const link2 = b.link.toLowerCase();
         return link1 < link2 ? -1 : Number(link1 > link2);
     });
-    return now
-        .filter(l => l.sizesAvailable !== null ? areSizesInArr(sizes, l.sizesAvailable) : true)
-        .map((l, index) => {
-            return {
-                ...compareSingle(l, past[index]), ...{
-                    title: now[index].title,
-                    desc: now[index].description,
-                    style: now[index].style,
-                    price: now[index].price,
-                    link: now[index].link,
-                    image: now[index].image,
-                },
-            }
-        });
+    // const filtered = now.filter((l, index) => {
+    //     if (l.title === "Woven Toggle Shirt") {
+    //         // console.log({...compareSingle(l, past[index]), ...{
+    //         //         title: now[index].title,
+    //         //         desc: now[index].description,
+    //         //         style: now[index].style,
+    //         //         price: now[index].price,
+    //         //         link: now[index].link,
+    //         //         image: now[index].image,
+    //         //     }});
+    //         // console.log(l.title, l.sizesAvailable !== null ? areSizesInArr(sizes, l.sizesAvailable) : true, sizes, l.sizesAvailable);
+    //     }
+    //     return (l.sizesAvailable !== null ? areSizesInArr(sizes, l.sizesAvailable) : true);
+    // });
+    return now.map((l, index) => {
+        return {
+            ...compareSingle(l, past[index]), ...{
+                title: now[index].title,
+                desc: now[index].description,
+                style: now[index].style,
+                price: now[index].price,
+                link: now[index].link,
+                image: now[index].image,
+            },
+        }
+    });
 };
 
 export { compareSingle, compareArrs, CompareArrData };

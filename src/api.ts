@@ -17,12 +17,14 @@ const checkItems = async (sizes: string[] = []): Promise<CompareArrData[]> => {
                 console.log("Items read...");
                 const trueData = JSON.parse(data);
                 const compared = compareArrs(trueData, items, sizes).filter(l => l.changed);
-                // if (compared.length > 0) {
+                // console.log(compared);
+                // console.log(`Compared length: ${compared.length}`)
+                if (compared.length > 0) {
                     console.log("Writing to file...");
                     fs.writeFile("./items.json", JSON.stringify(items, null, 4), (err) => {
                         if (err) throw err;
                     });
-                // }
+                }
                 resolve(compared);
             });
         });

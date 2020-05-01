@@ -7,7 +7,7 @@ import { matchPrefixesStrict } from "./matchPrefixesStrict";
 require('dotenv').config();
 
 const adapter = new Adapter({
-    token: process.env.BOT_TOKEN!
+    token: process.env.BOT_TOKEN!,
 });
 
 const command = new CommandBuilder()
@@ -17,52 +17,54 @@ const command = new CommandBuilder()
         const { args } = context.state;
         // setInterval(async () => {
         console.log("Message received...");
-            const apiData = await checkItems(args);
-            if (apiData.length > 0) {
-                for (const data of apiData) {
-                    await message.channel.send({
-                        embed: {
-                            title: "**Stock changed!**",
-                            color: "#ed1c24",
-                            fields: [
-                                {
-                                    name: "Title",
-                                    value: `**${data.title}**`,
-                                    inline: true
-                                },
-                                {
-                                    name: "Description",
-                                    value: `${data.desc}`,
-                                    inline: true
-                                },
-                                {
-                                    name: "Style",
-                                    value: `${data.style}`,
-                                    inline: true
-                                },
-                                {
-                                    name: "Price",
-                                    value: `$${data.price}`,
-                                    inline: true
-                                },
-                                {
-                                    name: "Link",
-                                    value: `[Click here](${data.link})`,
-                                    inline: true
-                                },
-                                {
-                                    name: "Status",
-                                    value: `${data.status}`,
-                                    inline: true
-                                }
-                            ],
-                            image: {
-                                url: `${data.image}`
-                            }
-                        }
-                    })
-                }
+        const apiData = await checkItems(args);
+        if (apiData.length > 0) {
+            for (const data of apiData) {
+                await message.channel.send({
+                    embed: {
+                        title: "**Stock changed!**",
+                        color: "#ed1c24",
+                        fields: [
+                            {
+                                name: "Title",
+                                value: `**${data.title}**`,
+                                inline: true,
+                            },
+                            {
+                                name: "Description",
+                                value: `${data.desc}`,
+                                inline: true,
+                            },
+                            {
+                                name: "Style",
+                                value: `${data.style}`,
+                                inline: true,
+                            },
+                            {
+                                name: "Price",
+                                value: `$${data.price}`,
+                                inline: true,
+                            },
+                            {
+                                name: "Link",
+                                value: `[Click here](${data.link})`,
+                                inline: true,
+                            },
+                            {
+                                name: "Status",
+                                value: `${data.status}`,
+                                inline: true,
+                            },
+                        ],
+                        image: {
+                            url: `${data.image}`,
+                        },
+                    },
+                })
             }
+        } else {
+            message.channel.send("No changes!");
+        }
         // }, 60000);
     })
     .done();
@@ -73,7 +75,7 @@ const commands = new CommandGroupBuilder()
     .setCommands(command)
     .done();
 
-const bot = new Bot({ adapter, commands: [commands] });
+const bot = new Bot({adapter, commands: [commands]});
 bot.start()
     .then(() => {
         console.log("Bot starting!");
