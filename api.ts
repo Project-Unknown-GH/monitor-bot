@@ -1,8 +1,8 @@
 import { Item } from "./helpers";
 import { compareArrs } from "./compare";
 
-const supreme = require("supreme-api");
-const fs = require('fs');
+import * as supreme from "supreme-api";
+import * as fs from "fs";
 
 supreme.getItems('all', (items: Item[], err) => {
     if (err) {
@@ -15,7 +15,6 @@ supreme.getItems('all', (items: Item[], err) => {
         const trueData = JSON.parse(data);
         const compared = compareArrs(trueData, items).filter(l => l.changed === true);
         console.log(compared);
-        console.log(compared.length);
         fs.writeFile("items.json", JSON.stringify(items), (err) => {
             if (err) throw err;
             console.log("Wrote to the file!");

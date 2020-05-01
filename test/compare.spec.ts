@@ -1,7 +1,7 @@
 import { compareSingle } from "../compare";
 import { Item } from "../helpers";
 
-const expect = require("chai").expect;
+import { expect } from "chai";
 
 describe('Compare single', function () {
     const templateItem: Omit<Item, "availability"> = {

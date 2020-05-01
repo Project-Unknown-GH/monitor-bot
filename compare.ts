@@ -10,7 +10,6 @@ interface CompareArrData extends CompareData {
 }
 
 const compareSingle = (past: Item, now: Item): CompareData => {
-    // console.log(`${past.link}\n${now.link}\n\n`);
     if (past.link === now.link) {
         return {
             changed: past.availability !== now.availability,
@@ -26,16 +25,15 @@ const compareSingle = (past: Item, now: Item): CompareData => {
 
 const compareArrs = (past: Item[], now: Item[]): CompareArrData[] => {
     past.sort((a, b) => {
-        const link1 = a.link.toLowerCase(); // ignore upper and lowercase
-        const link2 = b.link.toLowerCase(); // ignore upper and lowercase
+        const link1 = a.link.toLowerCase();
+        const link2 = b.link.toLowerCase();
         return link1 < link2 ? -1 : Number(link1 > link2);
     });
     now.sort((a, b) => {
-        const link1 = a.link.toLowerCase(); // ignore upper and lowercase
-        const link2 = b.link.toLowerCase(); // ignore upper and lowercase
+        const link1 = a.link.toLowerCase();
+        const link2 = b.link.toLowerCase();
         return link1 < link2 ? -1 : Number(link1 > link2);
     });
-    console.log(`${past.length}|${now.length}`);
     return past.map((l, index) => {
         return {...compareSingle(l, now[index]), ...{link: now[index].link}}
     });
