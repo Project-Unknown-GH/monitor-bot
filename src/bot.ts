@@ -1,5 +1,5 @@
 import { Bot, matchPrefixes } from "@enitoni/gears"
-import { Adapter, Command, CommandBuilder, CommandGroupBuilder } from "@enitoni/gears-discordjs"
+import { Adapter, CommandBuilder, CommandGroupBuilder } from "@enitoni/gears-discordjs"
 import { parseArguments, ParseArgumentsState } from "./middleware";
 import { checkItems } from "./api";
 import { matchPrefixesStrict } from "./matchPrefixesStrict";
@@ -11,16 +11,59 @@ const adapter = new Adapter({
 });
 
 const command = new CommandBuilder()
-    .match(matchPrefixesStrict("checkState"))
+    .match(matchPrefixesStrict("monitor"))
     .use<ParseArgumentsState>(async context => {
         const { message } = context;
-        const apiData = await checkItems();
-        if (apiData.length === 0) {
-            message.channel.send("No new changes!");
-        } else {
-            message.channel.send(JSON.stringify(apiData));
-        }
-        message.delete();
+        const { args } = context.state;
+        // setInterval(async () => {
+        console.log("Message received...");
+            const apiData = await checkItems();
+            if (apiData.length > 0) {
+                for (const data of apiData) {
+                    await message.channel.send({
+                        embed: {
+                            title: "**Stock changed!**",
+                            color: "#ed1c24",
+                            fields: [
+                                {
+                                    name: "Title",
+                                    value: `**${data.title}**`,
+                                    inline: true
+                                },
+                                {
+                                    name: "Description",
+                                    value: `${data.desc}`,
+                                    inline: true
+                                },
+                                {
+                                    name: "Style",
+                                    value: `${data.style}`,
+                                    inline: true
+                                },
+                                {
+                                    name: "Price",
+                                    value: `$${data.price}`,
+                                    inline: true
+                                },
+                                {
+                                    name: "Link",
+                                    value: `[Click here](${data.link})`,
+                                    inline: true
+                                },
+                                {
+                                    name: "Status",
+                                    value: `${data.status}`,
+                                    inline: true
+                                }
+                            ],
+                            image: {
+                                url: `${data.image}`
+                            }
+                        }
+                    })
+                }
+            }
+        // }, 60000);
     })
     .done();
 

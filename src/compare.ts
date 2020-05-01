@@ -1,4 +1,4 @@
-import { Item } from "./helpers";
+import { areSizesInArr, Item } from "./helpers";
 
 interface CompareData {
     changed: boolean,
@@ -6,7 +6,12 @@ interface CompareData {
 }
 
 interface CompareArrData extends CompareData {
-    link: string;
+    title: string,
+    desc: string,
+    style: string,
+    price: number
+    link: string,
+    image: string
 }
 
 const compareSingle = (past: Item, now: Item): CompareData => {
@@ -14,16 +19,18 @@ const compareSingle = (past: Item, now: Item): CompareData => {
         return {
             changed: past.availability !== now.availability,
             status: now.availability,
-        };
+        }
     } else {
         return {
             changed: false,
-            status: "Sold Out"
+            status: "Sold Out",
         }
     }
 };
 
-const compareArrs = (past: Item[], now: Item[]): CompareArrData[] => {
+const compareArrs = (past: Item[], now: Item[], sizes: string[]): CompareArrData[] => {
+    // console.log(past[0]);
+    // console.log(now[0]);
     past.sort((a, b) => {
         const link1 = a.link.toLowerCase();
         const link2 = b.link.toLowerCase();
@@ -34,9 +41,20 @@ const compareArrs = (past: Item[], now: Item[]): CompareArrData[] => {
         const link2 = b.link.toLowerCase();
         return link1 < link2 ? -1 : Number(link1 > link2);
     });
-    return past.map((l, index) => {
-        return {...compareSingle(l, now[index]), ...{link: now[index].link}}
-    });
+    return now
+        .filter(l => areSizesInArr(sizes, l.sizesAvailable))
+        .map((l, index) => {
+            return {
+                ...compareSingle(l, past[index]), ...{
+                    title: now[index].title,
+                    desc: now[index].description,
+                    style: now[index].style,
+                    price: now[index].price,
+                    link: now[index].link,
+                    image: now[index].image,
+                },
+            }
+        });
 };
 
 export { compareSingle, compareArrs, CompareArrData };

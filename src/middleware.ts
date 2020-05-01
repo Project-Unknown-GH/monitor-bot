@@ -9,9 +9,7 @@ export const parseArguments: Middleware<ParseArgumentsState> = (
     const { message, state } = context;
 
     const input = message.content.slice("sup!".length).trim();
-    const args = input.split(/ +/).slice(1);
-
-    state.args = args;
+    state.args = input.split(/ +/).slice(1);
 
     return next();
 };
