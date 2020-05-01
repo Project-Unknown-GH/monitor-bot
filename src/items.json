@@ -2832,7 +2832,12 @@
         "addCartURL": null,
         "price": 158,
         "image": "https://assets.supremenewyork.com/185330/vi/DNn50xVO7X4.jpg",
-        "sizesAvailable": null,
+        "sizesAvailable": [
+            {
+                "id": 78272,
+                "size": "Large"
+            }
+        ],
         "images": [
             "https://assets.supremenewyork.com/185330/zo/DNn50xVO7X4.jpg",
             "https://assets.supremenewyork.com/185336/zo/Ka5atOsDWJk.jpg"

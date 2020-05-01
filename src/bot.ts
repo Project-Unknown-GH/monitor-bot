@@ -17,7 +17,7 @@ const command = new CommandBuilder()
         const { args } = context.state;
         // setInterval(async () => {
         console.log("Message received...");
-            const apiData = await checkItems();
+            const apiData = await checkItems(args);
             if (apiData.length > 0) {
                 for (const data of apiData) {
                     await message.channel.send({

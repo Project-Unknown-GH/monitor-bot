@@ -39,4 +39,4 @@ const areSizesInArr = (sizes: string[], available: Size[]) => {
     return false;
 };
 
-export { Item, areSizesInArr }
+export { Item, Size, areSizesInArr }

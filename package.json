@@ -9,6 +9,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@types/chai": "^4.2.11",
         "@types/mocha": "^7.0.2",
         "chai": "^4.2.0",
         "discord.js": "^12.2.0",

@@ -42,7 +42,7 @@ const compareArrs = (past: Item[], now: Item[], sizes: string[]): CompareArrData
         return link1 < link2 ? -1 : Number(link1 > link2);
     });
     return now
-        .filter(l => areSizesInArr(sizes, l.sizesAvailable))
+        .filter(l => l.sizesAvailable !== null ? areSizesInArr(sizes, l.sizesAvailable) : true)
         .map((l, index) => {
             return {
                 ...compareSingle(l, past[index]), ...{

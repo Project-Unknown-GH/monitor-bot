@@ -1,7 +1,6 @@
 import { Item } from "./helpers";
 import { CompareArrData, compareArrs } from "./compare";
 
-// @ts-ignore
 import * as fs from "fs";
 import { getItems } from "./getData";
 
