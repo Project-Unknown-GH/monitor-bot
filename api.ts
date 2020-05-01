@@ -1,16 +1,17 @@
+import { Item } from "./helpers";
+
 const supreme = require("supreme-api");
 const fs = require('fs');
 
-supreme.getItems('all', (items, err) => {
+let previousStock: Item[] = [];
+
+supreme.getItems('all', (items: Item[], err) => {
     if (err) {
-        console.log(err);
+        console.error(err);
         return err;
     }
     console.log(items.length);
-    fs.writeFile("items.json", JSON.stringify(items), (err) => {
-        if (err) throw err;
-        console.log("File written!");
-    });
+    previousStock = items;
 });
 
 // supreme.getItem('http://www.supremenewyork.com/shop/jackets/fman5r0xy/aw5dopam2', (item, err) => {
