@@ -1,4 +1,4 @@
-type Available = "Available" | "Sold out"
+type Available = "Available" | "Sold Out"
 
 interface Item {
     title: string,

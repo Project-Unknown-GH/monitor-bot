@@ -1,17 +1,26 @@
 import { Item } from "./helpers";
+import { compareArrs } from "./compare";
 
 const supreme = require("supreme-api");
 const fs = require('fs');
-
-let previousStock: Item[] = [];
 
 supreme.getItems('all', (items: Item[], err) => {
     if (err) {
         console.error(err);
         return err;
     }
-    console.log(items.length);
-    previousStock = items;
+    console.log("Data retrieved.");
+    fs.readFile("items.json", "utf-8", (err, data) => {
+        if (err) throw err;
+        const trueData = JSON.parse(data);
+        const compared = compareArrs(trueData, items).filter(l => l.changed === true);
+        console.log(compared);
+        console.log(compared.length);
+        fs.writeFile("items.json", JSON.stringify(items), (err) => {
+            if (err) throw err;
+            console.log("Wrote to the file!");
+        });
+    });
 });
 
 // supreme.getItem('http://www.supremenewyork.com/shop/jackets/fman5r0xy/aw5dopam2', (item, err) => {
