@@ -1,5 +1,5 @@
-import { compareSingle } from "../compare";
-import { Item } from "../helpers";
+import { compareSingle } from "../src/compare";
+import { Item } from "../src/helpers";
 
 import { expect } from "chai";
 

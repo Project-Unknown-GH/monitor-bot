@@ -39,4 +39,4 @@ const compareArrs = (past: Item[], now: Item[]): CompareArrData[] => {
     });
 };
 
-export { compareSingle, compareArrs };
+export { compareSingle, compareArrs, CompareArrData };
