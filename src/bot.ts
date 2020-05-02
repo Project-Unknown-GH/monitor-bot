@@ -23,8 +23,8 @@ const command = new CommandBuilder()
     .use<ParseArgumentsState>(async context => {
         const {message} = context;
         const {args} = context.state;
+        console.log("Message received...");
         setInterval(async () => {
-            // console.log("Message received...");
             const apiData = await checkItems(args);
             if (apiData.length > 0) {
                 for (const data of apiData) {
@@ -70,10 +70,9 @@ const command = new CommandBuilder()
                         },
                     })
                 }
-            }
             // } else {
             //     message.channel.send("No changes!");
-            // }
+            }
         }, 60000);
     })
     .done();

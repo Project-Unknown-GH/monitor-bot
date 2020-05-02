@@ -12,6 +12,7 @@ const checkItems = async (sizes: string[] = []): Promise<CompareArrData[]> => {
                 reject(err);
             }
             console.log("Reading items...");
+            console.log(items[0])
             fs.readFile("./items.json", "utf-8", (err, data) => {
                 if (err) throw err;
                 console.log("Items read...");
