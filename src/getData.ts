@@ -92,13 +92,16 @@ const getItems = (category, callback) => {
                         sizesAvailable = null;
                     }
 
+                    const priceRaw = $('.price')[0];
+                    const price = priceRaw ? parseInt((priceRaw.children[0].children[0].data).replace('$', '').replace(',', '')) : NaN;
+
                     const metadata = {
                         title: $('#img-main').attr('alt'),
                         style: $('.style').attr('itemprop', 'model').text(),
                         link: link,
                         description: $('.description').text(),
                         addCartURL: addCartURL,
-                        price: parseInt(($('.price')[0].children[0].children[0].data).replace('$', '').replace(',', '')),
+                        price: price,
                         image: image,
                         sizesAvailable: sizesAvailable,
                         images: [],

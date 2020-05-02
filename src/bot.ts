@@ -13,59 +13,60 @@ const adapter = new Adapter({
 const command = new CommandBuilder()
     .match(matchPrefixesStrict("monitor"))
     .use<ParseArgumentsState>(async context => {
-        const { message } = context;
-        const { args } = context.state;
-        // setInterval(async () => {
-        console.log("Message received...");
-        const apiData = await checkItems(args);
-        if (apiData.length > 0) {
-            for (const data of apiData) {
-                await message.channel.send({
-                    embed: {
-                        title: "**Stock changed!**",
-                        color: "#ed1c24",
-                        fields: [
-                            {
-                                name: "Title",
-                                value: `**${data.title}**`,
-                                inline: true,
+        const {message} = context;
+        const {args} = context.state;
+        setInterval(async () => {
+            // console.log("Message received...");
+            const apiData = await checkItems(args);
+            if (apiData.length > 0) {
+                for (const data of apiData) {
+                    await message.channel.send({
+                        embed: {
+                            title: "**Stock changed!**",
+                            color: "#ed1c24",
+                            fields: [
+                                {
+                                    name: "Title",
+                                    value: `**${data.title}**`,
+                                    inline: true,
+                                },
+                                {
+                                    name: "Description",
+                                    value: `${data.desc}`,
+                                    inline: true,
+                                },
+                                {
+                                    name: "Style",
+                                    value: `${data.style}`,
+                                    inline: true,
+                                },
+                                {
+                                    name: "Price",
+                                    value: `$${data.price}`,
+                                    inline: true,
+                                },
+                                {
+                                    name: "Link",
+                                    value: `[Click here](${data.link})`,
+                                    inline: true,
+                                },
+                                {
+                                    name: "Status",
+                                    value: `${data.status}`,
+                                    inline: true,
+                                },
+                            ],
+                            image: {
+                                url: `${data.image}`,
                             },
-                            {
-                                name: "Description",
-                                value: `${data.desc}`,
-                                inline: true,
-                            },
-                            {
-                                name: "Style",
-                                value: `${data.style}`,
-                                inline: true,
-                            },
-                            {
-                                name: "Price",
-                                value: `$${data.price}`,
-                                inline: true,
-                            },
-                            {
-                                name: "Link",
-                                value: `[Click here](${data.link})`,
-                                inline: true,
-                            },
-                            {
-                                name: "Status",
-                                value: `${data.status}`,
-                                inline: true,
-                            },
-                        ],
-                        image: {
-                            url: `${data.image}`,
                         },
-                    },
-                })
+                    })
+                }
             }
-        } else {
-            message.channel.send("No changes!");
-        }
-        // }, 60000);
+            // } else {
+            //     message.channel.send("No changes!");
+            // }
+        }, 60000);
     })
     .done();
 
