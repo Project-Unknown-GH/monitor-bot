@@ -79,7 +79,7 @@ const command = new CommandBuilder()
     .done();
 
 const commands = new CommandGroupBuilder()
-    .match(matchPrefixes("sup!"))
+    .match(matchPrefixes("mon!"))
     .use(parseArguments)
     .setCommands(command, test)
     .done();
