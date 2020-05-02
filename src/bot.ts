@@ -10,8 +10,16 @@ const adapter = new Adapter({
     token: process.env.BOT_TOKEN!,
 });
 
+const test = new CommandBuilder()
+    .match(matchPrefixesStrict("test"))
+    .use<ParseArgumentsState>(context => {
+        const { message } = context;
+        message.channel.send("Test received!");
+    })
+    .done();
+
 const command = new CommandBuilder()
-    .match(matchPrefixesStrict("monitor"))
+    .match(matchPrefixesStrict("supreme"))
     .use<ParseArgumentsState>(async context => {
         const {message} = context;
         const {args} = context.state;
@@ -73,7 +81,7 @@ const command = new CommandBuilder()
 const commands = new CommandGroupBuilder()
     .match(matchPrefixes("sup!"))
     .use(parseArguments)
-    .setCommands(command)
+    .setCommands(command, test)
     .done();
 
 const bot = new Bot({adapter, commands: [commands]});
