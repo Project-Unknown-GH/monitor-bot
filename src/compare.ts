@@ -36,6 +36,9 @@ const compareArrs = (past: Item[], now: Item[], sizes: string[]): CompareArrData
         const link2 = b.link.toLowerCase();
         return link1 < link2 ? -1 : Number(link1 > link2);
     });
+    if (!Array.isArray(now)) {
+        return [];
+    }
     now.sort((a, b) => {
         const link1 = a.link.toLowerCase();
         const link2 = b.link.toLowerCase();
