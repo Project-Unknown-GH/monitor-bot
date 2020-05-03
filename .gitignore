@@ -1,3 +1,5 @@
 .idea
 src/.env
 src/*.js
+# Added by vyctor661
+dist
