@@ -70,10 +70,11 @@ const command = new CommandBuilder()
                         },
                     })
                 }
+            // }
             // } else {
             //     message.channel.send("No changes!");
             }
-        }, 60000);
+        }, 5000);
     })
     .done();
 
