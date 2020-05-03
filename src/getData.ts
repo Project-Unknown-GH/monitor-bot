@@ -29,7 +29,7 @@ const getItems = (category, callback) => {
         if (!err) {
             if (err) {
                 console.log('err');
-                return callback('No response from website', null);
+                return callback(`No response from website: ${err}`, null);
             } else {
                 var $ = cheerio.load(html);
             }
@@ -62,7 +62,7 @@ const getItems = (category, callback) => {
                 request(link, function(err, resp, html, rrr, body) {
 
                     if (err) {
-                        return callback('No response from website', null);
+                        return callback(`No response from website: ${err}`, null);
                     } else {
                         var $ = cheerio.load(html);
                     }
@@ -133,7 +133,7 @@ const getItems = (category, callback) => {
 
             });
         } else {
-            return callback('No response from website', null);
+            return callback(`No response from website: ${err}`, null);
         }
     });
 };
