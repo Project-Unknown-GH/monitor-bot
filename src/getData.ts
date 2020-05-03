@@ -24,6 +24,8 @@ const getItems = (category, callback) => {
         getURL = apiUrl + '/shop/new';
     }
 
+    console.log(`Requesting: ${getURL}`);
+
     request(getURL, (err, resp, html) => {
 
         if (!err) {
@@ -44,10 +46,9 @@ const getItems = (category, callback) => {
 
             const parsedResults = [];
 
-
             // console.log(len);
             $('img').each(function(i, element) {
-
+                console.log("i: " + i, this.parent);
                 const nextElement = $(this).next();
                 const prevElement = $(this).prev();
                 const image = "https://" + $(this).attr('src').substring(2);
@@ -56,6 +57,7 @@ const getItems = (category, callback) => {
                 const link = apiUrl + this.parent.attribs.href;
                 let sizesAvailable;
 
+                // console.log(`Link: ${link}`, this.parent.attribs)
 
                 if (availability == "") availability = "Available";
 

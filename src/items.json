@@ -361,14 +361,14 @@
         "style": "Red",
         "link": "http://www.supremenewyork.com/shop/accessories/mwriqld39/cw7bptge8",
         "description": "Cotton blend Hanes® cushion comfort crew sock with jacquard logo at top.",
-        "addCartURL": null,
+        "addCartURL": "http://www.supremenewyork.comundefined",
         "price": 20,
         "image": "https://assets.supremenewyork.com/187344/vi/DlTlIWGthhA.jpg",
         "sizesAvailable": null,
         "images": [
             "https://assets.supremenewyork.com/187344/zo/DlTlIWGthhA.jpg"
         ],
-        "availability": "Sold Out"
+        "availability": "Available"
     },
     {
         "title": "Supreme®/Hanes® Crew Socks (4 Pack)",
@@ -1519,14 +1519,14 @@
         "style": "Ice Blue",
         "link": "http://www.supremenewyork.com/shop/pants/ahjw91d2g/pafic7wh3",
         "description": "Cotton fleece with inset appliqué logo pattern. On seam hand pockets and single back patch pocket. Elastic cuffs and waistband with interior drawcord.",
-        "addCartURL": null,
+        "addCartURL": "http://www.supremenewyork.comundefined",
         "price": 148,
         "image": "https://assets.supremenewyork.com/188288/vi/GebaGNpc2N0.jpg",
         "sizesAvailable": null,
         "images": [
             "https://assets.supremenewyork.com/188288/zo/GebaGNpc2N0.jpg"
         ],
-        "availability": "Sold Out"
+        "availability": "Available"
     },
     {
         "title": "Cutout Letters Sweatpant",
@@ -1824,15 +1824,20 @@
         "style": "Light Pine",
         "link": "http://www.supremenewyork.com/shop/pants/jv65gkti2/lj7n6g3fv",
         "description": "Cotton fleece with on seam hand pockets and single back patch pocket. Elastic cuffs and waistband with interior drawcord. Metallic jacquard logo rib panels at sides.",
-        "addCartURL": null,
+        "addCartURL": "http://www.supremenewyork.com/shop/173304/add",
         "price": 148,
         "image": "https://assets.supremenewyork.com/188958/vi/2Rf9lcRpRFk.jpg",
-        "sizesAvailable": null,
+        "sizesAvailable": [
+            {
+                "id": 78403,
+                "size": "Medium"
+            }
+        ],
         "images": [
             "https://assets.supremenewyork.com/188958/zo/2Rf9lcRpRFk.jpg",
             "https://assets.supremenewyork.com/188959/zo/8RUvO8EpviY.jpg"
         ],
-        "availability": "Sold Out"
+        "availability": "Available"
     },
     {
         "title": "Metallic Rib Sweatpant",
@@ -1843,6 +1848,10 @@
         "price": 148,
         "image": "https://assets.supremenewyork.com/188956/vi/UkFFzFZaVIA.jpg",
         "sizesAvailable": [
+            {
+                "id": 78407,
+                "size": "Medium"
+            },
             {
                 "id": 78408,
                 "size": "Large"
@@ -1863,14 +1872,19 @@
         "style": "Dark Royal",
         "link": "http://www.supremenewyork.com/shop/pants/jv65gkti2/zgqof8uw4",
         "description": "Cotton fleece with on seam hand pockets and single back patch pocket. Elastic cuffs and waistband with interior drawcord. Metallic jacquard logo rib panels at sides.",
-        "addCartURL": null,
+        "addCartURL": "http://www.supremenewyork.com/shop/173304/add",
         "price": 148,
         "image": "https://assets.supremenewyork.com/184989/vi/CDd2Z8sFx2M.jpg",
-        "sizesAvailable": null,
+        "sizesAvailable": [
+            {
+                "id": 78400,
+                "size": "Large"
+            }
+        ],
         "images": [
             "https://assets.supremenewyork.com/184989/zo/CDd2Z8sFx2M.jpg"
         ],
-        "availability": "Sold Out"
+        "availability": "Available"
     },
     {
         "title": "Paisley Grid Chino Pant",
@@ -2134,14 +2148,23 @@
         "style": "Black",
         "link": "http://www.supremenewyork.com/shop/shirts/wscjxwbgi/t9wt2sfev",
         "description": "All cotton poplin with printed logo pattern, button down collar and single chest pocket.",
-        "addCartURL": null,
+        "addCartURL": "http://www.supremenewyork.com/shop/173297/add",
         "price": 138,
         "image": "https://assets.supremenewyork.com/185136/vi/TavwB0naTfI.jpg",
-        "sizesAvailable": null,
+        "sizesAvailable": [
+            {
+                "id": 78299,
+                "size": "Medium"
+            },
+            {
+                "id": 78300,
+                "size": "Large"
+            }
+        ],
         "images": [
             "https://assets.supremenewyork.com/185136/zo/TavwB0naTfI.jpg"
         ],
-        "availability": "Sold Out"
+        "availability": "Available"
     },
     {
         "title": "Supreme®/Nike® Air Force 1 Low",
@@ -2250,6 +2273,14 @@
         "image": "https://assets.supremenewyork.com/185455/vi/300nFOeVr38.jpg",
         "sizesAvailable": [
             {
+                "id": 78326,
+                "size": "Small"
+            },
+            {
+                "id": 78327,
+                "size": "Medium"
+            },
+            {
                 "id": 78328,
                 "size": "Large"
             }
@@ -2270,8 +2301,16 @@
         "image": "https://assets.supremenewyork.com/185482/vi/ufxcRt7jXOg.jpg",
         "sizesAvailable": [
             {
+                "id": 78319,
+                "size": "Medium"
+            },
+            {
                 "id": 78320,
                 "size": "Large"
+            },
+            {
+                "id": 78321,
+                "size": "XLarge"
             }
         ],
         "images": [
@@ -2821,8 +2860,16 @@
         "image": "https://assets.supremenewyork.com/185330/vi/DNn50xVO7X4.jpg",
         "sizesAvailable": [
             {
+                "id": 78271,
+                "size": "Medium"
+            },
+            {
                 "id": 78272,
                 "size": "Large"
+            },
+            {
+                "id": 78273,
+                "size": "XLarge"
             }
         ],
         "images": [
@@ -2891,6 +2938,10 @@
         "price": 158,
         "image": "https://assets.supremenewyork.com/185341/vi/_6gyJNkmD2I.jpg",
         "sizesAvailable": [
+            {
+                "id": 78287,
+                "size": "Medium"
+            },
             {
                 "id": 78288,
                 "size": "Large"
@@ -3355,6 +3406,10 @@
             {
                 "id": 78427,
                 "size": "Large"
+            },
+            {
+                "id": 78428,
+                "size": "XLarge"
             }
         ],
         "images": [
@@ -3368,15 +3423,24 @@
         "style": "Royal",
         "link": "http://www.supremenewyork.com/shop/tops-sweaters/l873ycrqp/h9q0ula1m",
         "description": "Poly with stripe appliqué pattern. Stripe rib collar and armholes. Tackle twill appliqué logo at front and graphic at back.",
-        "addCartURL": null,
+        "addCartURL": "http://www.supremenewyork.com/shop/173306/add",
         "price": 118,
         "image": "https://assets.supremenewyork.com/185850/vi/6CPUOjmvJRI.jpg",
-        "sizesAvailable": null,
+        "sizesAvailable": [
+            {
+                "id": 78430,
+                "size": "Medium"
+            },
+            {
+                "id": 78431,
+                "size": "Large"
+            }
+        ],
         "images": [
             "https://assets.supremenewyork.com/185850/zo/6CPUOjmvJRI.jpg",
             "https://assets.supremenewyork.com/185857/zo/YrX5xVyzh1o.jpg"
         ],
-        "availability": "Sold Out"
+        "availability": "Available"
     },
     {
         "title": "St. Supreme Basketball Jersey",
@@ -3414,7 +3478,12 @@
         "addCartURL": null,
         "price": 118,
         "image": "https://assets.supremenewyork.com/185880/vi/y8kbE1uM38Q.jpg",
-        "sizesAvailable": null,
+        "sizesAvailable": [
+            {
+                "id": 78424,
+                "size": "XLarge"
+            }
+        ],
         "images": [
             "https://assets.supremenewyork.com/185880/zo/y8kbE1uM38Q.jpg",
             "https://assets.supremenewyork.com/185887/zo/139NELF2IlQ.jpg"
