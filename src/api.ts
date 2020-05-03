@@ -3,7 +3,6 @@ import { CompareArrData, compareArrs } from "./compare";
 
 import * as fs from "fs";
 import { getItems } from "./getData";
-
 const checkItems = async (sizes: string[] = []): Promise<CompareArrData[]> => {
     return new Promise((resolve, reject) => {
         getItems('all', (items: Item[], err: unknown) => {

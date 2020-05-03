@@ -6,6 +6,7 @@ const request = require('request').defaults({
     //timeout: 30000
 });
 const cheerio = require("cheerio");
+const fs = require("fs")
 
 const apiUrl = 'http://www.supremenewyork.com';
 
@@ -26,7 +27,7 @@ const getItems = (category, callback) => {
 
     console.log(`Requesting: ${getURL}`);
 
-    request(getURL, (err, resp, html) => {
+    request({headers: {Origin: "https://cors-anywhere.herokuapp.com/https://www.supremenewyork.com/shop/all/"}, uri: getURL}, (err, resp, html) => {
 
         if (!err) {
             if (err) {
@@ -34,21 +35,26 @@ const getItems = (category, callback) => {
                 return callback(`No response from website: ${err}`, null);
             } else {
                 var $ = cheerio.load(html);
+                console.log(`Site responded:`, resp._httpMessage );
+                fs.writeFile("lehtml.html", html, (err) => {
+                    if (err) throw err;
+                })
             }
 
             let count = $('img').length;
+            console.log(`Amount: ${count}`);
 
             if ($('.shop-closed').length > 0) {
                 return callback('Store Closed', null);
             } else if (count === 0) {
-                return callback('Store Closed', null);
+                return callback('No imagse', null);
             }
 
             const parsedResults = [];
 
             // console.log(len);
             $('img').each(function(i, element) {
-                console.log("i: " + i, this.parent);
+                // console.log("i: " + i, this.parent);
                 const nextElement = $(this).next();
                 const prevElement = $(this).prev();
                 const image = "https://" + $(this).attr('src').substring(2);

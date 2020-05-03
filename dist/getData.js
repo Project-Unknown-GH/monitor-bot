@@ -6,6 +6,7 @@ const request = require('request').defaults({
 //timeout: 30000
 });
 const cheerio = require("cheerio");
+const fs = require("fs");
 const apiUrl = 'http://www.supremenewyork.com';
 String.prototype.capitalizeEachWord = function () {
     return this.replace(/\w\S*/g, function (txt) {
@@ -20,7 +21,8 @@ const getItems = (category, callback) => {
     else if (category == 'new') {
         getURL = apiUrl + '/shop/new';
     }
-    request(getURL, (err, resp, html) => {
+    console.log(`Requesting: ${getURL}`);
+    request({ headers: { Origin: "https://cors-anywhere.herokuapp.com/https://www.supremenewyork.com/shop/all/" }, uri: getURL }, (err, resp, html) => {
         if (!err) {
             if (err) {
                 console.log('err');
@@ -28,8 +30,14 @@ const getItems = (category, callback) => {
             }
             else {
                 var $ = cheerio.load(html);
+                console.log(`Site responded:`, resp.req);
+                fs.writeFile("lehtml.html", html, (err) => {
+                    if (err)
+                        throw err;
+                });
             }
             let count = $('img').length;
+            console.log(`Amount: ${count}`);
             if ($('.shop-closed').length > 0) {
                 return callback('Store Closed', null);
             }
@@ -39,6 +47,7 @@ const getItems = (category, callback) => {
             const parsedResults = [];
             // console.log(len);
             $('img').each(function (i, element) {
+                // console.log("i: " + i, this.parent);
                 const nextElement = $(this).next();
                 const prevElement = $(this).prev();
                 const image = "https://" + $(this).attr('src').substring(2);
@@ -46,7 +55,7 @@ const getItems = (category, callback) => {
                 let availability = nextElement.text().capitalizeEachWord();
                 const link = apiUrl + this.parent.attribs.href;
                 let sizesAvailable;
-                console.log(`Link: ${link}|${this.parent.attribs.href}`);
+                // console.log(`Link: ${link}`, this.parent.attribs)
                 if (availability == "")
                     availability = "Available";
                 request(link, function (err, resp, html, rrr, body) {
