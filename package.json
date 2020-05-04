@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "mocha -r ts-node/register test/*.spec.ts",
-        "start": "ts-node src/bot.ts"
+        "start": "ndoe src/bot.js"
     },
     "author": "",
     "license": "ISC",
