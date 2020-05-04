@@ -15,7 +15,9 @@
         "chai": "^4.2.0",
         "discord.js": "^12.2.0",
         "mocha": "^7.1.2",
-        "supreme-api": "^1.0.6"
+        "supreme-api": "^1.0.6",
+        "ts-node": "^8.10.1",
+        "typescript": "^3.8.3"
     },
     "devDependencies": {
         "@enitoni/gears": "3.0.4",
@@ -25,7 +27,5 @@
         "cheerio": "^1.0.0-rc.3",
         "dotenv": "^8.2.0",
         "request": "^2.88.2",
-        "ts-node": "^8.10.1",
-        "typescript": "^3.8.3"
     }
 }
