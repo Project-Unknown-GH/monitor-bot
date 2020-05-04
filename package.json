@@ -17,9 +17,7 @@
         "mocha": "^7.1.2",
         "supreme-api": "^1.0.6",
         "ts-node": "^8.10.1",
-        "typescript": "^3.8.3"
-    },
-    "devDependencies": {
+        "typescript": "^3.8.3",
         "@enitoni/gears": "3.0.4",
         "@enitoni/gears-discordjs": "2.0.1",
         "@types/node": "^13.13.4",
