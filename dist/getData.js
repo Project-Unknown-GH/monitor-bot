@@ -30,7 +30,7 @@ const getItems = (category, callback) => {
             }
             else {
                 var $ = cheerio.load(html);
-                console.log(`Site responded:`, resp.req);
+                console.log(resp.req.res);
                 fs.writeFile("lehtml.html", html, (err) => {
                     if (err)
                         throw err;
@@ -42,7 +42,7 @@ const getItems = (category, callback) => {
                 return callback('Store Closed', null);
             }
             else if (count === 0) {
-                return callback('Store Closed', null);
+                return callback('No imagse', null);
             }
             const parsedResults = [];
             // console.log(len);

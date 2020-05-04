@@ -1,5 +1,5 @@
 .idea
-src/.env
+.env
 src/*.js
 # Added by vyctor661
 dist

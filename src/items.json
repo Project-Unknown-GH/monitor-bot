@@ -361,10 +361,43 @@
         "style": "Red",
         "link": "http://www.supremenewyork.com/shop/accessories/mwriqld39/cw7bptge8",
         "description": "Cotton blend Hanes® cushion comfort crew sock with jacquard logo at top.",
-        "addCartURL": "http://www.supremenewyork.comundefined",
+        "addCartURL": "http://www.supremenewyork.com/shop/173008/add",
         "price": 20,
         "image": "https://assets.supremenewyork.com/187344/vi/DlTlIWGthhA.jpg",
-        "sizesAvailable": null,
+        "sizesAvailable": [
+            {
+                "id": 1,
+                "size": "1"
+            },
+            {
+                "id": 2,
+                "size": "2"
+            },
+            {
+                "id": 3,
+                "size": "3"
+            },
+            {
+                "id": 4,
+                "size": "4"
+            },
+            {
+                "id": 5,
+                "size": "5"
+            },
+            {
+                "id": 6,
+                "size": "6"
+            },
+            {
+                "id": 7,
+                "size": "7"
+            },
+            {
+                "id": 8,
+                "size": "8"
+            }
+        ],
         "images": [
             "https://assets.supremenewyork.com/187344/zo/DlTlIWGthhA.jpg"
         ],
@@ -740,7 +773,7 @@
         "style": "Blue Chocolate Chip Camo",
         "link": "http://www.supremenewyork.com/shop/bags/oty9p7h5i/f6k39nl2b",
         "description": "610D Cordura® poly with PVC-coated mesh and embossed logo lining. Main zip compartment with internal zip pocket. Front zip compartment, left mesh side pocket with buckle flap closure and right side pocket with elastic shockcord closure. Top flap with buckle closures, D-rings and zip mesh pocket. Adjustable waist and shoulder straps. 3M® Reflective printed logo at front flap and woven logo label at lower front. 6L.",
-        "addCartURL": "http://www.supremenewyork.com/shop/172974/add",
+        "addCartURL": null,
         "price": 98,
         "image": "https://assets.supremenewyork.com/187044/vi/W7KkEx376rE.jpg",
         "sizesAvailable": null,
@@ -749,7 +782,7 @@
             "https://assets.supremenewyork.com/187016/zo/xSoeDo_5Rpo.jpg",
             "https://assets.supremenewyork.com/187031/zo/Qh8R4AvsHRk.jpg"
         ],
-        "availability": "Available"
+        "availability": "Sold Out"
     },
     {
         "title": "Waist Bag",
@@ -1519,10 +1552,19 @@
         "style": "Ice Blue",
         "link": "http://www.supremenewyork.com/shop/pants/ahjw91d2g/pafic7wh3",
         "description": "Cotton fleece with inset appliqué logo pattern. On seam hand pockets and single back patch pocket. Elastic cuffs and waistband with interior drawcord.",
-        "addCartURL": "http://www.supremenewyork.comundefined",
+        "addCartURL": "http://www.supremenewyork.com/shop/173127/add",
         "price": 148,
         "image": "https://assets.supremenewyork.com/188288/vi/GebaGNpc2N0.jpg",
-        "sizesAvailable": null,
+        "sizesAvailable": [
+            {
+                "id": 77418,
+                "size": "Large"
+            },
+            {
+                "id": 77419,
+                "size": "XLarge"
+            }
+        ],
         "images": [
             "https://assets.supremenewyork.com/188288/zo/GebaGNpc2N0.jpg"
         ],
@@ -1644,10 +1686,6 @@
         "image": "https://assets.supremenewyork.com/187204/vi/uLBTa-zKoew.jpg",
         "sizesAvailable": [
             {
-                "id": 75901,
-                "size": "30"
-            },
-            {
                 "id": 75902,
                 "size": "32"
             },
@@ -1666,20 +1704,15 @@
         "style": "Flags",
         "link": "http://www.supremenewyork.com/shop/pants/bx642958u/mp1fe9kga",
         "description": "Heavy cotton blend twill with enzyme wash. Slanted front pockets, zip fly, single coin pocket and snap closure on back pocket.",
-        "addCartURL": "http://www.supremenewyork.com/shop/173006/add",
+        "addCartURL": null,
         "price": 118,
         "image": "https://assets.supremenewyork.com/187211/vi/V7ZajHAt9d8.jpg",
-        "sizesAvailable": [
-            {
-                "id": 75897,
-                "size": "30"
-            }
-        ],
+        "sizesAvailable": null,
         "images": [
             "https://assets.supremenewyork.com/187211/zo/V7ZajHAt9d8.jpg",
             "https://assets.supremenewyork.com/187212/zo/D5tityjyuBw.jpg"
         ],
-        "availability": "Available"
+        "availability": "Sold Out"
     },
     {
         "title": "Work Pant",
@@ -1824,20 +1857,15 @@
         "style": "Light Pine",
         "link": "http://www.supremenewyork.com/shop/pants/jv65gkti2/lj7n6g3fv",
         "description": "Cotton fleece with on seam hand pockets and single back patch pocket. Elastic cuffs and waistband with interior drawcord. Metallic jacquard logo rib panels at sides.",
-        "addCartURL": "http://www.supremenewyork.com/shop/173304/add",
+        "addCartURL": null,
         "price": 148,
         "image": "https://assets.supremenewyork.com/188958/vi/2Rf9lcRpRFk.jpg",
-        "sizesAvailable": [
-            {
-                "id": 78403,
-                "size": "Medium"
-            }
-        ],
+        "sizesAvailable": null,
         "images": [
             "https://assets.supremenewyork.com/188958/zo/2Rf9lcRpRFk.jpg",
             "https://assets.supremenewyork.com/188959/zo/8RUvO8EpviY.jpg"
         ],
-        "availability": "Available"
+        "availability": "Sold Out"
     },
     {
         "title": "Metallic Rib Sweatpant",
@@ -1855,10 +1883,6 @@
             {
                 "id": 78408,
                 "size": "Large"
-            },
-            {
-                "id": 78409,
-                "size": "XLarge"
             }
         ],
         "images": [
@@ -2272,10 +2296,6 @@
         "price": 118,
         "image": "https://assets.supremenewyork.com/185455/vi/300nFOeVr38.jpg",
         "sizesAvailable": [
-            {
-                "id": 78326,
-                "size": "Small"
-            },
             {
                 "id": 78327,
                 "size": "Medium"
@@ -2908,6 +2928,10 @@
             {
                 "id": 78280,
                 "size": "Large"
+            },
+            {
+                "id": 78281,
+                "size": "XLarge"
             }
         ],
         "images": [
@@ -2938,10 +2962,6 @@
         "price": 158,
         "image": "https://assets.supremenewyork.com/185341/vi/_6gyJNkmD2I.jpg",
         "sizesAvailable": [
-            {
-                "id": 78287,
-                "size": "Medium"
-            },
             {
                 "id": 78288,
                 "size": "Large"
@@ -3428,10 +3448,6 @@
         "image": "https://assets.supremenewyork.com/185850/vi/6CPUOjmvJRI.jpg",
         "sizesAvailable": [
             {
-                "id": 78430,
-                "size": "Medium"
-            },
-            {
                 "id": 78431,
                 "size": "Large"
             }
@@ -3478,12 +3494,7 @@
         "addCartURL": null,
         "price": 118,
         "image": "https://assets.supremenewyork.com/185880/vi/y8kbE1uM38Q.jpg",
-        "sizesAvailable": [
-            {
-                "id": 78424,
-                "size": "XLarge"
-            }
-        ],
+        "sizesAvailable": null,
         "images": [
             "https://assets.supremenewyork.com/185880/zo/y8kbE1uM38Q.jpg",
             "https://assets.supremenewyork.com/185887/zo/139NELF2IlQ.jpg"
@@ -3713,10 +3724,6 @@
             {
                 "id": 77395,
                 "size": "Large"
-            },
-            {
-                "id": 77396,
-                "size": "XLarge"
             }
         ],
         "images": [

@@ -27,15 +27,14 @@ const getItems = (category, callback) => {
 
     console.log(`Requesting: ${getURL}`);
 
-    request({headers: {Origin: "https://cors-anywhere.herokuapp.com/https://www.supremenewyork.com/shop/all/"}, uri: getURL}, (err, resp, html) => {
-
+    request({headers: {"Origin": apiUrl}, uri: `https://cors-anywhere.herokuapp.com/${getURL}`}, (err, resp, html) => {
         if (!err) {
             if (err) {
                 console.log('err');
                 return callback(`No response from website: ${err}`, null);
             } else {
                 var $ = cheerio.load(html);
-                console.log(`Site responded:`, resp._httpMessage );
+                console.log(resp.request);
                 fs.writeFile("lehtml.html", html, (err) => {
                     if (err) throw err;
                 })
@@ -154,5 +153,7 @@ const watchAllItems = (interval, category, callback) => {
         });
     }, 1000 * interval); // Every xx sec
 };
+
+getItems("all", () => {})
 
 export { getItems, watchAllItems }
