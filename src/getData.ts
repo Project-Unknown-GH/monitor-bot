@@ -27,14 +27,13 @@ const getItems = (category, callback) => {
 
     console.log(`Requesting: ${getURL}`);
 
-    request({headers: {"Origin": apiUrl}, uri: `https://cors-anywhere.herokuapp.com/${getURL}`}, (err, resp, html) => {
+    request(getURL, (err, resp, html) => {
         if (!err) {
             if (err) {
-                console.log('err');
+                console.log(err);
                 return callback(`No response from website: ${err}`, null);
             } else {
                 var $ = cheerio.load(html);
-                console.log(resp.request);
                 fs.writeFile("lehtml.html", html, (err) => {
                     if (err) throw err;
                 })
@@ -69,6 +68,7 @@ const getItems = (category, callback) => {
                 request(link, function(err, resp, html, rrr, body) {
 
                     if (err) {
+                        console.log(err);
                         return callback(`No response from website: ${err}`, null);
                     } else {
                         var $ = cheerio.load(html);
@@ -102,9 +102,12 @@ const getItems = (category, callback) => {
                     const priceRaw = $('.price')[0];
                     const price = priceRaw ? parseInt((priceRaw.children[0].children[0].data).replace('$', '').replace(',', '')) : NaN;
 
+
+                    const data = html.split('$("title").html')[1].slice(2, html.split('$("title").html')[1].length - 3).split("Supreme: ")[1];
+
                     const metadata = {
-                        title: $('#img-main').attr('alt'),
-                        style: $('.style').attr('itemprop', 'model').text(),
+                        title: data.split("-")[0],
+                        style: data.split("-")[1],
                         link: link,
                         description: $('.description').text(),
                         addCartURL: addCartURL,
@@ -140,6 +143,8 @@ const getItems = (category, callback) => {
 
             });
         } else {
+            console.log(err);
+            console.log("pooa")
             return callback(`No response from website: ${err}`, null);
         }
     });
