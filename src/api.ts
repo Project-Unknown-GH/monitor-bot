@@ -3,9 +3,9 @@ import { CompareArrData, compareArrs } from "./compare";
 
 import * as fs from "fs";
 import { getItems } from "./getData";
-const checkItems = async (sizes: string[] = []): Promise<CompareArrData[]> => {
+const checkItems = async (sizes: string[] = [], proxy: string | null = null): Promise<CompareArrData[]> => {
     return new Promise((resolve, reject) => {
-        getItems('all', (items: Item[], err: unknown) => {
+        getItems('all', proxy, (items: Item[], err: unknown) => {
             console.log(items.length, typeof items);
             if (typeof items === "string") {
                 resolve([]);

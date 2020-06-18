@@ -16,7 +16,7 @@ String.prototype.capitalizeEachWord = function() {
     });
 };
 
-const getItems = (category, callback) => {
+const getItems = (category, proxy, callback) => {
 
     let getURL = apiUrl + '/shop/all/' + category;
     if (category == 'all') {
@@ -27,7 +27,14 @@ const getItems = (category, callback) => {
 
     console.log(`Requesting: ${getURL}`);
 
-    request(getURL, (err, resp, html) => {
+    request({
+        url: getURL,
+        headers: {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36",
+            Connection: "keep-alive"
+        },
+        proxy: proxy
+    }, (err, resp, html) => {
         if (!err) {
             if (err) {
                 console.log(err);
@@ -65,7 +72,14 @@ const getItems = (category, callback) => {
 
                 if (availability == "") availability = "Available";
 
-                request(link, function(err, resp, html, rrr, body) {
+                request({
+                    url: link,
+                    headers: {
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36",
+                        Connection: "keep-alive"
+                    },
+                    proxy: proxy
+                }, function(err, resp, html, rrr, body) {
 
                     if (err) {
                         console.log(err);
