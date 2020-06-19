@@ -1,4 +1,4 @@
-import ProxyLists from "proxy-lists"
+// import ProxyLists from "proxy-lists"
 import { checkItems } from "./api";
 const axios = require('axios');
 
@@ -6,35 +6,35 @@ require('dotenv').config();
 
 let isRunning = false;
 
-const genProxies = (): Promise<Record<string, any>> => {
-    return new Promise((res, rej) => {
-        let endData = null
-        ProxyLists.getProxies({
-            // options
-            countries: ['us'],
-            protocols: ["https"]
-        })
-            .on('data', function (proxies: Record<string, any>[]) {
-                // Received some proxies.
-                console.log('got some proxies');
-                endData = proxies[0];
-                res(endData);
-            })
-            .on('error', function (error: unknown) {
-                // Some error has occurred.
-                console.log('error!', error);
-                rej(error)
-            })
-            .once('end', function () {
-                // Done getting proxies.
-                console.log('end!');
-            });
-    })
-}
+// const genProxies = (): Promise<Record<string, any>> => {
+//     return new Promise((res, rej) => {
+//         let endData = null
+//         ProxyLists.getProxies({
+//             // options
+//             countries: ['us'],
+//             protocols: ["https"]
+//         })
+//             .on('data', function (proxies: Record<string, any>[]) {
+//                 // Received some proxies.
+//                 console.log('got some proxies');
+//                 endData = proxies[0];
+//                 res(endData);
+//             })
+//             .on('error', function (error: unknown) {
+//                 // Some error has occurred.
+//                 console.log('error!', error);
+//                 rej(error)
+//             })
+//             .once('end', function () {
+//                 // Done getting proxies.
+//                 console.log('end!');
+//             });
+//     })
+// }
 
 const doStuff = async () => {
-    const proxy = await genProxies();
-    const proxyUrl = `${proxy.protocols[0]}://${proxy.ipAddress}:${proxy.port}`
+    // const proxy = await genProxies();
+    const proxyUrl = "http://Ghd897!a274:QBvsReoJ@51.81.97.125:33128";
     console.log("Proxy url:", proxyUrl);
     if (!isRunning) {
         isRunning = true;

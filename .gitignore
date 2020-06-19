@@ -2,6 +2,7 @@
 .env
 src/*.js
 dist/**/*.js
+ndoe_modules
 # Added by vyctor661
 dist
 

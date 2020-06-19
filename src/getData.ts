@@ -164,15 +164,4 @@ const getItems = (category, proxy, callback) => {
     });
 };
 
-const watchAllItems = (interval, category, callback) => {
-    console.log('Now watching for all items');
-    const watchOnAllItems = setInterval(function() {
-        getItems(category, function(items) {
-            callback(items, null);
-        });
-    }, 1000 * interval); // Every xx sec
-};
-
-getItems("all", () => {})
-
-export { getItems, watchAllItems }
+export { getItems }

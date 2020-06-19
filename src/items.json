@@ -943,21 +943,12 @@
         "style": " Lime",
         "link": "http://www.supremenewyork.com/shop/jackets/fgywr7j08/iz4pljnvu",
         "description": "",
-        "addCartURL": "http://www.supremenewyork.comundefined",
+        "addCartURL": null,
         "price": null,
         "image": "https://assets.supremenewyork.com/185701/vi/UViB4MpmmgI.jpg",
-        "sizesAvailable": [
-            {
-                "id": null,
-                "size": "Medium<\\/option>\\n"
-            },
-            {
-                "id": null,
-                "size": "Large<\\/option><\\/select>next jacket ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
-            }
-        ],
+        "sizesAvailable": null,
         "images": [],
-        "availability": "Available"
+        "availability": "Sold Out"
     },
     {
         "title": "World Famous Coaches Jacket ",
@@ -1040,7 +1031,11 @@
         "sizesAvailable": [
             {
                 "id": null,
-                "size": "Medium<\\/option><\\/select>next jacket ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
+                "size": "Medium<\\/option>\\n"
+            },
+            {
+                "id": null,
+                "size": "Large<\\/option><\\/select>next jacket ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
             }
         ],
         "images": [],
@@ -1155,21 +1150,12 @@
         "style": " Ash Grey",
         "link": "http://www.supremenewyork.com/shop/pants/z9ouqnjak/efuzqxv0i",
         "description": "",
-        "addCartURL": "http://www.supremenewyork.comundefined",
+        "addCartURL": null,
         "price": null,
         "image": "https://assets.supremenewyork.com/189572/vi/6r7yZ7uTjik.jpg",
-        "sizesAvailable": [
-            {
-                "id": null,
-                "size": "Medium<\\/option>\\n"
-            },
-            {
-                "id": null,
-                "size": "Large<\\/option><\\/select><\\/fieldset>add to cartand keep shopping<\\/legend>"
-            }
-        ],
+        "sizesAvailable": null,
         "images": [],
-        "availability": "Available"
+        "availability": "Sold Out"
     },
     {
         "title": "Animals Sweatpant ",
@@ -1324,19 +1310,11 @@
         "sizesAvailable": [
             {
                 "id": null,
-                "size": "Small<\\/option>\\n"
-            },
-            {
-                "id": null,
                 "size": "Medium<\\/option>\\n"
             },
             {
                 "id": null,
-                "size": "Large<\\/option>\\n"
-            },
-            {
-                "id": null,
-                "size": "XLarge<\\/option><\\/select>next shirt ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
+                "size": "Large<\\/option><\\/select>next shirt ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
             }
         ],
         "images": [],
@@ -1351,6 +1329,10 @@
         "price": null,
         "image": "https://assets.supremenewyork.com/185253/vi/5-h6ngQkfIM.jpg",
         "sizesAvailable": [
+            {
+                "id": null,
+                "size": "Small<\\/option>\\n"
+            },
             {
                 "id": null,
                 "size": "Medium<\\/option>\\n"
@@ -1485,17 +1467,12 @@
         "style": " Light Purple",
         "link": "http://www.supremenewyork.com/shop/shirts/z24zonc9e/z5y8luxbe",
         "description": "",
-        "addCartURL": "http://www.supremenewyork.comundefined",
+        "addCartURL": null,
         "price": null,
         "image": "https://assets.supremenewyork.com/184953/vi/_c09pxzY_ks.jpg",
-        "sizesAvailable": [
-            {
-                "id": null,
-                "size": "Medium<\\/option><\\/select>next shirt ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
-            }
-        ],
+        "sizesAvailable": null,
         "images": [],
-        "availability": "Available"
+        "availability": "Sold Out"
     },
     {
         "title": "Supreme®/Nike® Air Force 1 Low ",
@@ -1594,11 +1571,7 @@
         "sizesAvailable": [
             {
                 "id": null,
-                "size": "30<\\/option>\\n"
-            },
-            {
-                "id": null,
-                "size": "32<\\/option><\\/select>next short ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
+                "size": "30<\\/option><\\/select>next short ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
             }
         ],
         "images": [],
@@ -1615,11 +1588,7 @@
         "sizesAvailable": [
             {
                 "id": null,
-                "size": "Medium<\\/option>\\n"
-            },
-            {
-                "id": null,
-                "size": "Large<\\/option><\\/select>next short ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
+                "size": "Medium<\\/option><\\/select>next short ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
             }
         ],
         "images": [],
@@ -1652,15 +1621,7 @@
             },
             {
                 "id": null,
-                "size": "Medium<\\/option>\\n"
-            },
-            {
-                "id": null,
-                "size": "Large<\\/option>\\n"
-            },
-            {
-                "id": null,
-                "size": "XLarge<\\/option><\\/select>next short ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
+                "size": "Medium<\\/option><\\/select>next short ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
             }
         ],
         "images": [],
@@ -1685,11 +1646,7 @@
             },
             {
                 "id": null,
-                "size": "Large<\\/option>\\n"
-            },
-            {
-                "id": null,
-                "size": "XLarge<\\/option><\\/select>next short ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
+                "size": "Large<\\/option><\\/select>next short ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
             }
         ],
         "images": [],
@@ -2148,10 +2105,6 @@
         "sizesAvailable": [
             {
                 "id": null,
-                "size": "Medium<\\/option>\\n"
-            },
-            {
-                "id": null,
                 "size": "Large<\\/option><\\/select>next sweatshirt ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
             }
         ],
@@ -2476,11 +2429,7 @@
         "sizesAvailable": [
             {
                 "id": null,
-                "size": "Medium<\\/option>\\n"
-            },
-            {
-                "id": null,
-                "size": "Large<\\/option><\\/select>next tops/sweater ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
+                "size": "Medium<\\/option><\\/select>next tops/sweater ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
             }
         ],
         "images": [],
@@ -2514,11 +2463,7 @@
         "sizesAvailable": [
             {
                 "id": null,
-                "size": "Medium<\\/option>\\n"
-            },
-            {
-                "id": null,
-                "size": "Large<\\/option><\\/select>next tops/sweater ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
+                "size": "Medium<\\/option><\\/select>next tops/sweater ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
             }
         ],
         "images": [],
@@ -2885,11 +2830,7 @@
         "sizesAvailable": [
             {
                 "id": null,
-                "size": "Medium<\\/option>\\n"
-            },
-            {
-                "id": null,
-                "size": "Large<\\/option><\\/select>next tops/sweater ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
+                "size": "Medium<\\/option><\\/select>next tops/sweater ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
             }
         ],
         "images": [],
@@ -2910,7 +2851,11 @@
             },
             {
                 "id": null,
-                "size": "Large<\\/option><\\/select>next tops/sweater ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
+                "size": "Large<\\/option>\\n"
+            },
+            {
+                "id": null,
+                "size": "XLarge<\\/option><\\/select>next tops/sweater ><\\/a><\\/fieldset>add to cartand keep shopping<\\/legend>"
             }
         ],
         "images": [],
