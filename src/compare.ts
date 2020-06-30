@@ -81,4 +81,9 @@ const compareArrs = (past: Item[], now: Item[], sizes: string[]): CompareArrData
     });
 };
 
-export { compareSingle, compareArrs, CompareArrData };
+const filterData = (arr: Item[], filters: string[]) => {
+    console.log(arr);
+    return arr.filter(l => l.title.split(" ").map(j => j.toLowerCase()).some(j => filters.map(i => i.toLowerCase()).includes(j)));
+};
+
+export { compareSingle, compareArrs, CompareArrData, filterData };

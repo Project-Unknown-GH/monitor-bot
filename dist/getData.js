@@ -13,7 +13,7 @@ String.prototype.capitalizeEachWord = function () {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
 };
-const getItems = (category, callback) => {
+const getItems = (category, proxy, callback) => {
     let getURL = apiUrl + '/shop/all/' + category;
     if (category == 'all') {
         getURL = apiUrl + '/shop/all';
@@ -22,20 +22,27 @@ const getItems = (category, callback) => {
         getURL = apiUrl + '/shop/new';
     }
     console.log(`Requesting: ${getURL}`);
-    request({ headers: { Origin: "https://cors-anywhere.herokuapp.com/https://www.supremenewyork.com/shop/all/" }, uri: getURL }, (err, resp, html) => {
+    request({
+        url: getURL,
+        headers: {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36",
+            Connection: "keep-alive"
+        },
+        proxy: proxy
+    }, (err, resp, html) => {
         if (!err) {
             if (err) {
-                console.log('err');
+                console.log(err);
                 return callback(`No response from website: ${err}`, null);
             }
             else {
                 var $ = cheerio.load(html);
-                console.log(resp.req.res);
                 fs.writeFile("lehtml.html", html, (err) => {
                     if (err)
                         throw err;
                 });
             }
+            console.log(html);
             let count = $('img').length;
             console.log(`Amount: ${count}`);
             if ($('.shop-closed').length > 0) {
@@ -58,8 +65,16 @@ const getItems = (category, callback) => {
                 // console.log(`Link: ${link}`, this.parent.attribs)
                 if (availability == "")
                     availability = "Available";
-                request(link, function (err, resp, html, rrr, body) {
+                request({
+                    url: link,
+                    headers: {
+                        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36",
+                        Connection: "keep-alive"
+                    },
+                    proxy: proxy
+                }, function (err, resp, html, rrr, body) {
                     if (err) {
+                        console.log(err);
                         return callback(`No response from website: ${err}`, null);
                     }
                     else {
@@ -90,9 +105,10 @@ const getItems = (category, callback) => {
                     }
                     const priceRaw = $('.price')[0];
                     const price = priceRaw ? parseInt((priceRaw.children[0].children[0].data).replace('$', '').replace(',', '')) : NaN;
+                    const data = html.split('$("title").html')[1].slice(2, html.split('$("title").html')[1].length - 3).split("Supreme: ")[1];
                     const metadata = {
-                        title: $('#img-main').attr('alt'),
-                        style: $('.style').attr('itemprop', 'model').text(),
+                        title: data.split("-")[0],
+                        style: data.split("-")[1],
                         link: link,
                         description: $('.description').text(),
                         addCartURL: addCartURL,
@@ -125,17 +141,10 @@ const getItems = (category, callback) => {
             });
         }
         else {
+            console.log(err);
+            console.log("pooa");
             return callback(`No response from website: ${err}`, null);
         }
     });
 };
 exports.getItems = getItems;
-const watchAllItems = (interval, category, callback) => {
-    console.log('Now watching for all items');
-    const watchOnAllItems = setInterval(function () {
-        getItems(category, function (items) {
-            callback(items, null);
-        });
-    }, 1000 * interval); // Every xx sec
-};
-exports.watchAllItems = watchAllItems;

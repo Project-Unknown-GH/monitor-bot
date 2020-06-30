@@ -45,6 +45,7 @@ const getItems = (category, proxy, callback) => {
                     if (err) throw err;
                 })
             }
+		console.log(html);
 
             let count = $('img').length;
             console.log(`Amount: ${count}`);

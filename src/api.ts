@@ -1,22 +1,25 @@
 import { Item } from "./helpers";
-import { CompareArrData, compareArrs } from "./compare";
+import { CompareArrData, compareArrs, filterData } from "./compare";
 
 import * as fs from "fs";
 import { getItems } from "./getData";
-const checkItems = async (sizes: string[] = [], proxy: string | null = null): Promise<CompareArrData[]> => {
+const checkItems = async (sizes: string[] = [], proxy: string | null = null, filters: string[] = [], filename: string = "items"): Promise<CompareArrData[]> => {
     return new Promise((resolve, reject) => {
-        getItems('all', proxy, (items: Item[], err: unknown) => {
-            console.log(items.length, typeof items);
-            if (typeof items === "string") {
+	    console.log("Filename: " + filename);
+        getItems('all', proxy, (rawItems: Item[], err: unknown) => {
+            if (typeof rawItems  === "string") {
+		console.log(`Error: ${rawItems}`);
                 resolve([]);
             } else {
+	        const items = filters.length === 0 ? rawItems : filterData(rawItems, filters);
+                console.log(items.length, typeof items);
                 if (err) {
                     console.error(err);
                     reject(err);
                 }
                 console.log(new Date());
                 console.log("Reading items...");
-                fs.readFile("./items.json", "utf-8", (err, data) => {
+                fs.readFile(`./${filename}.json`, "utf-8", (err, data) => {
                     if (err) throw err;
                     console.log("Items read...");
                     try {
@@ -35,14 +38,14 @@ const checkItems = async (sizes: string[] = [], proxy: string | null = null): Pr
                         console.log(compared.length > 0 || Object.keys(trueData).length !== Object.keys(items).length);
                         if (compared.length > 0 || Object.keys(trueData).length !== Object.keys(items).length) {
                             console.log("Writing to file...");
-                            fs.writeFile("./items.json", JSON.stringify(items, null, 4), (err) => {
+                            fs.writeFile(`./${filename}.json`, JSON.stringify(items, null, 4), (err) => {
                                 if (err) throw err;
                             });
                         }
                         resolve(compared);
                     } catch (e) {
                         console.log("We errored :(");
-                        fs.writeFile("./items.json", JSON.stringify(items, null, 4), (err) => {
+                        fs.writeFile(`./${filename}.json`, JSON.stringify(items, null, 4), (err) => {
                             if (err) throw err
                         });
                         console.error(e);

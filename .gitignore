@@ -2,13 +2,6 @@
 .env
 src/*.js
 dist/**/*.js
-ndoe_modules
+node_modules
 # Added by vyctor661
 dist
-
-$("#cctrl").html("<div id=\"cctrl\"><form class=\"add\" id=\"cart-addf\" action=\"/shop/173367/add\" accept-charset=\"UTF-8\" method=\"post\"><input name=\"utf8\" type=\"hidden\" value=\"&#x2713;\" /><input type=\"hidden\" name=\"authe
-nticity_token\" value=\"pEqgwniqp+H9e1wnO9PqR+ZbLxqhVScZa2M7P7MQ++WnLTNeUalpBNRuFwUHLLAok3NaSQHn9YfUEOnX+GrZvQ==\" /><input type=\"hidden\" name=\"h\" id=\"h\" value=\"1\" /><input type=\"hidden\" name=\"st\" id=\"st\" value=\"27409\"
-/><fieldset><legend class=\"screen-reader-only\" id=\"select-size\">select size<\/legend><select name=\"s\" id=\"s\" aria-labelledby=\"size-select\"><option value=\"79129\">Medium<\/option>\n<option value=\"79130\">Large<\/option><\/se
-lect><a class=\"next\" href=\"/shop/pants/fmez2nfis\">next pant &gt;<\/a><\/fieldset><fieldset id=\"add-remove-buttons\"><legend class=\"screen-reader-only\" id=\"form-buttons\">add to cartand keep shopping<\/legend><input type=\"submi
-t\" name=\"commit\" value=\"add to cart\" class=\"button\" /><a class=\"button continue\" href=\"/shop\">keep shopping<\/a><\/fieldset><\/form><\/div>")
-$("title").html("Supreme: Animals Sweatpant - Fuchsia")

@@ -32,14 +32,14 @@ let isRunning = false;
 //     })
 // }
 
-const doStuff = async () => {
+export const doStuff = async (filters: string[] = [], filename: string) => {
     // const proxy = await genProxies();
-    const proxyUrl = "http://Ghd897!a274:QBvsReoJ@51.81.97.125:33128";
-    console.log("Proxy url:", proxyUrl);
+    const proxyUrl = "http://Ghd897!a21:dSPCGH3p@51.81.97.124:33128";
+    console.log("Proxy url:", proxyUrl, "Filename:", filename);
     if (!isRunning) {
         isRunning = true;
         console.log("Checking items");
-        const apiData = await checkItems([], proxyUrl);
+        const apiData = await checkItems([], proxyUrl, filters, filename);
         const embeds = [];
         if (apiData.length > 0) {
             for (const data of apiData) {
@@ -83,7 +83,7 @@ const doStuff = async () => {
             console.log("Sending!");
             axios({
                 method: 'post',
-                url: 'https://discordapp.com/api/webhooks/708285711006171156/wpGG8gARQpC0hY5ZG2g3zgzwNfeH0ryHGvnzxISRFIQ1dn7qwVB7YTO3XZhuAr1g-ChE',
+                url: "https://discord.com/api/webhooks/726133952469008397/aENg94lwsRmsCTVuKkOqZmcagZdschiCKdzzzoeBSDUMbKYoPVCvFiaV62ik3ST6-iSc",
                 data: { username: 'Unknown', avatarUrl: 'https://d2lllwtzebgpl1.cloudfront.net/d4dafbd834ecc67b9666e869edc0eebb_listingImg_IHnxpLv5Dg.jpg', embeds: currEmbeds }
             });
         }
@@ -91,5 +91,3 @@ const doStuff = async () => {
     }
 };
 
-console.log("starting!!!");
-setInterval(doStuff, 20000);
