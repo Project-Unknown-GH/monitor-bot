@@ -65,6 +65,7 @@ const getItems = async (category, proxy, callback) => {
                         throw err;
                 });
             }
+            console.log(html);
             let count = $('img').length;
             console.log(`Amount: ${count}`);
             if ($('.shop-closed').length > 0) {

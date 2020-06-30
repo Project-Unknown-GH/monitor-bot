@@ -1,5 +1,9 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const proxyUrl_1 = __importDefault(require("./proxyUrl"));
 // import ProxyLists from "proxy-lists"
 const api_1 = require("./api");
 const axios = require('axios');
@@ -32,28 +36,35 @@ let isRunning = false;
 // }
 exports.doStuff = async (filters = [], filename) => {
     // const proxy = await genProxies();
-    const proxyUrl = "http://Ghd897!a21:dSPCGH3p@51.81.97.124:33128";
-    console.log("Proxy url:", proxyUrl, "Filename:", filename);
+    console.log("Proxy url:", proxyUrl_1.default, "Filename:", filename);
     if (!isRunning) {
         isRunning = true;
         console.log("Checking items");
-        const apiData = await api_1.checkItems([], proxyUrl, filters, filename);
+        const apiData = await api_1.checkItems([], proxyUrl_1.default, filters, filename);
         const embeds = [];
         if (apiData.length > 0) {
             for (const data of apiData) {
                 embeds.push({
-                    title: "**Stock changed!**",
+                    title: "https://supremenewyork.com/shop/",
+                    url: "https://supremenewyork.com/shop/",
+                    footer: {
+                        text: `Project Unknown | Powered by https://discord.gg/24TqAYj | ${new Date().toLocaleString("en-US", { timeZone: "America/New_York" })}`
+                    },
                     color: 15539236,
                     fields: [
                         {
                             name: "Title",
-                            value: `**${data.title}**`,
-                            inline: true,
+                            value: `**${data.title}**`
                         },
                         {
                             name: "Style",
                             value: `${data.style}`,
-                            inline: true,
+                            inline: true
+                        },
+                        {
+                            name: "Price",
+                            value: `$${data.price / 100}`,
+                            inline: true
                         },
                         {
                             name: "Link",
@@ -64,11 +75,6 @@ exports.doStuff = async (filters = [], filename) => {
                             name: "Status",
                             value: `${data.status}`,
                             inline: true,
-                        },
-                        {
-                            name: "Price",
-                            value: `$${data.price / 100}`,
-                            inline: true
                         }
                     ],
                     image: {

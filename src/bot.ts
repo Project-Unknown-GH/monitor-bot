@@ -1,3 +1,4 @@
+import proxyUrl from "./proxyUrl";
 // import ProxyLists from "proxy-lists"
 import { checkItems } from "./api";
 const axios = require('axios');
@@ -34,7 +35,6 @@ let isRunning = false;
 
 export const doStuff = async (filters: string[] = [], filename: string) => {
     // const proxy = await genProxies();
-    const proxyUrl = "http://Ghd897!a21:dSPCGH3p@51.81.97.124:33128";
     console.log("Proxy url:", proxyUrl, "Filename:", filename);
     if (!isRunning) {
         isRunning = true;
@@ -44,19 +44,27 @@ export const doStuff = async (filters: string[] = [], filename: string) => {
         if (apiData.length > 0) {
             for (const data of apiData) {
                 embeds.push({
-                    title: "**Stock changed!**",
+		    title: "https://supremenewyork.com/shop/",
+		    url: "https://supremenewyork.com/shop/",
+		    footer: {
+                	text: `Project Unknown | Powered by https://discord.gg/24TqAYj | ${new Date().toLocaleString("en-US", {timeZone: "America/New_York"})}`
+            	    },
                     color: 15539236,
                     fields: [
                         {
                             name: "Title",
-                            value: `**${data.title}**`,
-                            inline: true,
+                            value: `**${data.title}**`
                         },
                         {
                             name: "Style",
                             value: `${data.style}`,
-                            inline: true,
+                            inline: true
                         },
+			{
+			    name: "Price",
+			    value: `$${data.price / 100}`,
+			    inline: true
+			},
                         {
                             name: "Link",
                             value: `[Click here](${data.link})`,
@@ -66,12 +74,7 @@ export const doStuff = async (filters: string[] = [], filename: string) => {
                             name: "Status",
                             value: `${data.status}`,
                             inline: true,
-                        },
-			{
-			    name: "Price",
-			    value: `$${data.price / 100}`,
-			    inline: true
-			}
+                        }
                     ],
                     image: {
                         url: `${data.image}`,

@@ -68,6 +68,8 @@ const getItems = async (category, proxy, callback) => {
                 })
             }
 
+	    console.log(html);
+
             let count = $('img').length;
             console.log(`Amount: ${count}`);
 
