@@ -7,32 +7,6 @@ require('dotenv').config();
 
 let isRunning = false;
 
-// const genProxies = (): Promise<Record<string, any>> => {
-//     return new Promise((res, rej) => {
-//         let endData = null
-//         ProxyLists.getProxies({
-//             // options
-//             countries: ['us'],
-//             protocols: ["https"]
-//         })
-//             .on('data', function (proxies: Record<string, any>[]) {
-//                 // Received some proxies.
-//                 console.log('got some proxies');
-//                 endData = proxies[0];
-//                 res(endData);
-//             })
-//             .on('error', function (error: unknown) {
-//                 // Some error has occurred.
-//                 console.log('error!', error);
-//                 rej(error)
-//             })
-//             .once('end', function () {
-//                 // Done getting proxies.
-//                 console.log('end!');
-//             });
-//     })
-// }
-
 export const doStuff = async (filters: string[] = [], filename: string) => {
     // const proxy = await genProxies();
     console.log("Proxy url:", proxyUrl, "Filename:", filename);
