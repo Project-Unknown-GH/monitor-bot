@@ -13,7 +13,29 @@ String.prototype.capitalizeEachWord = function () {
         return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     });
 };
-const getItems = (category, proxy, callback) => {
+const getShopData = (proxy) => {
+    return new Promise((res, rej) => {
+        const url = `${apiUrl}/shop.json`;
+        request({
+            url,
+            headers: {
+                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36",
+                Connection: "keep-alive"
+            },
+            proxy: proxy
+        }, (err, resp) => {
+            if (err) {
+                rej(err);
+            }
+            ;
+            console.log(resp.body);
+            const data = JSON.parse(resp.body);
+            console.log(Object.values(data["products_and_categories"]).flat());
+            res(Object.values(data["products_and_categories"]).flat());
+        });
+    });
+};
+const getItems = async (category, proxy, callback) => {
     let getURL = apiUrl + '/shop/all/' + category;
     if (category == 'all') {
         getURL = apiUrl + '/shop/all';
@@ -21,6 +43,7 @@ const getItems = (category, proxy, callback) => {
     else if (category == 'new') {
         getURL = apiUrl + '/shop/new';
     }
+    const shopData = await getShopData();
     console.log(`Requesting: ${getURL}`);
     request({
         url: getURL,
@@ -42,7 +65,6 @@ const getItems = (category, proxy, callback) => {
                         throw err;
                 });
             }
-            console.log(html);
             let count = $('img').length;
             console.log(`Amount: ${count}`);
             if ($('.shop-closed').length > 0) {
@@ -103,9 +125,15 @@ const getItems = (category, proxy, callback) => {
                     else {
                         sizesAvailable = null;
                     }
-                    const priceRaw = $('.price')[0];
-                    const price = priceRaw ? parseInt((priceRaw.children[0].children[0].data).replace('$', '').replace(',', '')) : NaN;
+                    // const priceRaw = $('.price')[0];
+                    // const price = priceRaw ? parseInt((priceRaw.children[0].children[0].data).replace('$', '').replace(',', '')) : NaN;
+                    const imageEnding = image.split("/")[image.split("/").length - 1];
                     const data = html.split('$("title").html')[1].slice(2, html.split('$("title").html')[1].length - 3).split("Supreme: ")[1];
+                    const price = shopData.find(l => {
+                        const lEnding = l["image_url"].split("/")[l["image_url"].split("/").length - 1];
+                        //console.log(`${l.name.toLowerCase().trim()}|${data.split("-")[0].toLowerCase().trim()}`);
+                        return lEnding === imageEnding || l.name.toLowerCase().trim() === data.split("-")[0].toLowerCase().trim();
+                    })?.price;
                     const metadata = {
                         title: data.split("-")[0],
                         style: data.split("-")[1],

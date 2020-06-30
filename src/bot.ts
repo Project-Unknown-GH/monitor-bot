@@ -67,6 +67,11 @@ export const doStuff = async (filters: string[] = [], filename: string) => {
                             value: `${data.status}`,
                             inline: true,
                         },
+			{
+			    name: "Price",
+			    value: `$${data.price / 100}`,
+			    inline: true
+			}
                     ],
                     image: {
                         url: `${data.image}`,
