@@ -14,6 +14,7 @@ String.prototype.capitalizeEachWord = function () {
     });
 };
 const getShopData = (proxy) => {
+	console.log("Proxy: " + proxy);
     return new Promise((res, rej) => {
         const url = `${apiUrl}/shop.json`;
         request({
@@ -43,7 +44,7 @@ const getItems = async (category, proxy, callback) => {
     else if (category == 'new') {
         getURL = apiUrl + '/shop/new';
     }
-    const shopData = await getShopData();
+    const shopData = await getShopData(proxy);
     console.log(`Requesting: ${getURL}`);
     request({
         url: getURL,
