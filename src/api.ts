@@ -4,6 +4,7 @@ import { CompareArrData, compareArrs, filterData } from "./compare";
 import * as fs from "fs";
 import { getItems } from "./getData";
 const checkItems = async (sizes: string[] = [], proxy: string | null = null, filters: string[] = [], filename: string = "items"): Promise<CompareArrData[]> => {
+    console.log(`Using ${proxy} as proxy!`);
     return new Promise((resolve, reject) => {
 	    console.log("Filename: " + filename);
         getItems('all', proxy, (rawItems: Item[], err: unknown) => {

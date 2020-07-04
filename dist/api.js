@@ -11,6 +11,7 @@ const compare_1 = require("./compare");
 const fs = __importStar(require("fs"));
 const getData_1 = require("./getData");
 const checkItems = async (sizes = [], proxy = null, filters = [], filename = "items") => {
+    console.log(`Using ${proxy} as proxy!`);
     return new Promise((resolve, reject) => {
         console.log("Filename: " + filename);
         getData_1.getItems('all', proxy, (rawItems, err) => {

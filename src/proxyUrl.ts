@@ -1,1 +1,1 @@
-export default "Ghd897!a100:dSPCGH3p@51.81.97.124:33128"
+export default "http://Ghd897!a58:h1XuOfyf@51.81.113.248:33128"

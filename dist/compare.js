@@ -56,7 +56,7 @@ const compareArrs = (past, now, sizes) => {
         const pastItem = past.find(j => j.link === l.link);
         // console.log(!!pastItem)
         return {
-            ...compareSingle(l, pastItem ?? l), ...{
+            ...compareSingle(l, pastItem !== null && pastItem !== void 0 ? pastItem : l), ...{
                 title: now[index].title,
                 desc: now[index].description,
                 style: now[index].style,

@@ -37,6 +37,7 @@ const getShopData = (proxy: string) => {
 }
 
 const getItems = async (category, proxy, callback) => {
+    console.log("Proxy: ", proxy);
 
     let getURL = apiUrl + '/shop/all/' + category;
     if (category == 'all') {
@@ -45,7 +46,7 @@ const getItems = async (category, proxy, callback) => {
         getURL = apiUrl + '/shop/new';
     }
 
-    const shopData = await getShopData();
+    const shopData = await getShopData(proxy);
 
     console.log(`Requesting: ${getURL}`);
 
