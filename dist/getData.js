@@ -1,6 +1,7 @@
 "use strict";
 // @ts-nocheck
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getItems = void 0;
 // Sorry about ts-nochecking, but this is a module file that I had to make some edits to
 const request = require('request').defaults({
 //timeout: 30000
@@ -28,9 +29,7 @@ const getShopData = (proxy) => {
                 rej(err);
             }
             ;
-            console.log(resp.body);
             const data = JSON.parse(resp.body);
-            console.log(Object.values(data["products_and_categories"]).flat());
             res(Object.values(data["products_and_categories"]).flat());
         });
     });
@@ -66,7 +65,6 @@ const getItems = async (category, proxy, callback) => {
                         throw err;
                 });
             }
-            console.log(html);
             let count = $('img').length;
             console.log(`Amount: ${count}`);
             if ($('.shop-closed').length > 0) {

@@ -28,9 +28,7 @@ const getShopData = (proxy: string) => {
             proxy: proxy
         }, (err, resp) => {
 	    if (err) { rej(err) };
-	    console.log(resp.body);
 	    const data = JSON.parse(resp.body);
-	    console.log(Object.values(data["products_and_categories"]).flat());
 	    res(Object.values(data["products_and_categories"]).flat())
 	});
     })
@@ -68,8 +66,6 @@ const getItems = async (category, proxy, callback) => {
                     if (err) throw err;
                 })
             }
-
-	    console.log(html);
 
             let count = $('img').length;
             console.log(`Amount: ${count}`);

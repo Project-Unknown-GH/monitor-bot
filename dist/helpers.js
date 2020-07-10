@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.areSizesInArr = void 0;
 const isSizeInArr = (size, sizes) => {
     for (const item of sizes) {
         if (size.toLowerCase() === item.size.toLowerCase()) {

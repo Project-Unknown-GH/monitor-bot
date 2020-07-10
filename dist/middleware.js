@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.parseArguments = void 0;
 exports.parseArguments = (context, next) => {
     const { message, state } = context;
     const input = message.content.slice("mon!".length).trim();

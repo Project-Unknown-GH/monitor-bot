@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.matchPrefixesStrict = void 0;
 const resolveArrayToOne = (arr) => {
     if (Array.isArray(arr))
         return arr[0];
