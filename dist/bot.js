@@ -7,7 +7,9 @@ exports.doStuff = void 0;
 const proxyUrl_1 = __importDefault(require("./proxyUrl"));
 // import ProxyLists from "proxy-lists"
 const api_1 = require("./api");
+const urls_1 = require("./urls");
 const axios = require('axios');
+const dotenv = require("dotenv");
 require('dotenv').config();
 let isRunning = false;
 exports.doStuff = async (filters = [], filename) => {
@@ -19,9 +21,7 @@ exports.doStuff = async (filters = [], filename) => {
         console.log("Checking items");
         const apiData = await api_1.checkItems([], proxyUrl, filters, filename);
         const embeds = [];
-        console.log("API DATA", apiData);
         if (apiData.length > 0) {
-            console.log("We've got some!!!!!!");
             for (const data of apiData) {
                 console.log(data.status === "Available");
                 if (data.status !== "Available") {
@@ -54,7 +54,6 @@ exports.doStuff = async (filters = [], filename) => {
             // } else {
             //     message.channel.send("No changes!");
         }
-        console.log("Embeds: ", embeds.length);
         while (embeds.length > 0) {
             const currEmbeds = [];
             for (let i = 0; i < 10 && embeds.length !== 0; i++) {
@@ -64,7 +63,7 @@ exports.doStuff = async (filters = [], filename) => {
             console.log("Sending!");
             axios({
                 method: 'post',
-                url: "https://discordapp.com/api/webhooks/726133952469008397/aENg94lwsRmsCTVuKkOqZmcagZdschiCKdzzzoeBSDUMbKYoPVCvFiaV62ik3ST6-iSc",
+                url: urls_1.Webhooks[process.env.WEBHOOK_URL],
                 data: { username: 'Unknown', avatarUrl: 'https://d2lllwtzebgpl1.cloudfront.net/d4dafbd834ecc67b9666e869edc0eebb_listingImg_IHnxpLv5Dg.jpg', embeds: currEmbeds }
             });
         }

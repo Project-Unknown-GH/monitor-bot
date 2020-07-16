@@ -1,7 +1,9 @@
 import getProxyUrl from "./proxyUrl";
 // import ProxyLists from "proxy-lists"
 import { checkItems } from "./api";
+import { Webhooks } from "./urls";
 const axios = require('axios');
+const dotenv = require("dotenv");
 
 require('dotenv').config();
 
@@ -55,7 +57,7 @@ export const doStuff = async (filters: string[] = [], filename: string) => {
             console.log("Sending!");
             axios({
                 method: 'post',
-                url: "https://discordapp.com/api/webhooks/726133952469008397/aENg94lwsRmsCTVuKkOqZmcagZdschiCKdzzzoeBSDUMbKYoPVCvFiaV62ik3ST6-iSc",
+                url: Webhooks[process.env.WEBHOOK_URL!],
                 data: { username: 'Unknown', avatarUrl: 'https://d2lllwtzebgpl1.cloudfront.net/d4dafbd834ecc67b9666e869edc0eebb_listingImg_IHnxpLv5Dg.jpg', embeds: currEmbeds }
             });
         }

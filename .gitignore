@@ -2,6 +2,6 @@
 .env
 src/*.js
 dist/**/*.js
-node_modules
+node_modules/
 # Added by vyctor661
 dist
