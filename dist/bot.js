@@ -7,12 +7,10 @@ exports.doStuff = void 0;
 const proxyUrl_1 = __importDefault(require("./proxyUrl"));
 // import ProxyLists from "proxy-lists"
 const api_1 = require("./api");
-const urls_1 = require("./urls");
 const axios = require('axios');
-const dotenv = require("dotenv");
 require('dotenv').config();
 let isRunning = false;
-exports.doStuff = async (filters = [], filename) => {
+exports.doStuff = async (webhooks, filters = [], filename) => {
     // const proxy = await genProxies();
     const proxyUrl = await proxyUrl_1.default();
     console.log("Proxy url:", proxyUrl, "Filename:", filename);
@@ -61,10 +59,12 @@ exports.doStuff = async (filters = [], filename) => {
             }
             ;
             console.log("Sending!");
-            axios({
-                method: 'post',
-                url: urls_1.Webhooks[process.env.WEBHOOK_URL],
-                data: { username: 'Unknown', avatarUrl: 'https://d2lllwtzebgpl1.cloudfront.net/d4dafbd834ecc67b9666e869edc0eebb_listingImg_IHnxpLv5Dg.jpg', embeds: currEmbeds }
+            webhooks.map(l => {
+                axios({
+                    method: 'post',
+                    url: l,
+                    data: { username: 'Unknown', avatarUrl: 'https://d2lllwtzebgpl1.cloudfront.net/d4dafbd834ecc67b9666e869edc0eebb_listingImg_IHnxpLv5Dg.jpg', embeds: currEmbeds }
+                });
             });
         }
         isRunning = false;

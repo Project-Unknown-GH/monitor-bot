@@ -6,7 +6,7 @@
     "scripts": {
         "test": "mocha -r ts-node/register test/*.spec.ts",
         "start": "ts-node ./src/bot.ts",
-        "build": "tsc src/**/*.ts"
+        "build": "tsc"
     },
     "author": "",
     "license": "ISC",
