@@ -10,7 +10,7 @@ This is a monitor for supreme.
 - Place your filters in a file named `filters.txt`. This is in the `dist` folder. Note that the filters are separated by lines breaks, not by commas.
   - Note: the filtering algorithm is not very complex, as I don't do stuff with matching spelling errors, etc, so please make sure that everything is spelled correctly.
 - Place your proxies in a file named `proxies.txt`. This is also in the `dist` folder.
-- To run the monitor for a region, run `supreme-setting.js`. Setting is either `main` or `filtered`. This will be in the `dist` folder. Tools like `pm2` can be used to keep this process alive forever, or at least until it is stopped or the computer turns off.
+- To run the monitor, run `supreme-setting.js`. Setting is either `main` or `filtered`. This will be in the `dist` folder. Tools like `pm2` can be used to keep this process alive forever, or at least until it is stopped or the computer turns off.
 
 ## Advanced config
 
